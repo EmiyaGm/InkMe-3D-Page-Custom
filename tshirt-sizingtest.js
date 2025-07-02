@@ -358,9 +358,9 @@ document.addEventListener('DOMContentLoaded', function () {
 // OpenAI Content Moderation API
 // Hàm kiểm tra nội dung không phù hợp bằng OpenAI GPT-4 Vision
 async function checkInappropriateContent(base64ImageData) {
-  // QUAN TRỌNG: Thay thế 'YOUR_OPENAI_API_KEY' bằng API key của bạn
-  const OPENAI_API_KEY = '';
-  if (!OPENAI_API_KEY || OPENAI_API_KEY === 'YOUR_OPENAI_API_KEY') {
+  // QUAN TRỌNG: Thay thế 'YOUR_JUST_IT' bằng API key của bạn
+  const JUST_IT = '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';
+  if (!JUST_IT || JUST_IT === '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') {
     console.warn("OpenAI API key chưa được cấu hình. Bỏ qua bước kiểm duyệt nội dung.");
     // Trả về kết quả an toàn nếu không có API key để không chặn người dùng
     return {
@@ -392,7 +392,7 @@ async function checkInappropriateContent(base64ImageData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENAI_API_KEY}`
+        'Authorization': `Bearer ${JUST_IT}`
       },
       body: JSON.stringify(payload)
     });
