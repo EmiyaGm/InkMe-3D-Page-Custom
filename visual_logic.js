@@ -13744,9 +13744,9 @@ Thêm Ảnh
           productTitle: state.sceneName || 'InkMe Custom',
           images: [''],
           rating: '5',
-          price: 250000,
+          price: 190000,
           quantity: 1,
-          subTotal: 250000,
+          subTotal: 190000,
           productId: localStorage.getItem("productId") || 'lo-custom',
           userId: localStorage.getItem("userId") || 'guest-user',
           inkmeFile: {
@@ -13762,9 +13762,9 @@ Thêm Ảnh
             {
               name: 'Size M',
               image: 'https://dummyimage.com/100x100/ccc/000?text=S', 
-              price: 250000,
+              price: 190000,
               quantity: 1,
-              subTotal: 250000
+              subTotal: 190000
             }
           ]
         };
