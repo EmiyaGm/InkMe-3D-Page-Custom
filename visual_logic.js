@@ -13722,7 +13722,7 @@ Thêm Ảnh
     
         console.log('🚀 Uploading layout to server...', { filename });
     
-        fetch('https://inkme-3d-server-production.up.railway.app/api/products/upload-file'), {
+        fetch('https://inkme-3d-server-production.up.railway.app/api/products/upload-file', {
           method: 'POST',
          headers: {
         'Authorization': authorization,
@@ -13769,7 +13769,7 @@ Thêm Ảnh
           ]
         };
     
-          return fetch(https://inkme-3d-server-production.up.railway.app/api/cart/add'), {
+          return fetch('https://inkme-3d-server-production.up.railway.app/api/cart/add', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
