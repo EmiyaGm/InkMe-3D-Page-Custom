@@ -13717,12 +13717,16 @@ Thêm Ảnh
         const filename = state.sceneName + '_layout.sav';
         
         const formData = new FormData();
-        formData.append('file', blob, filename); // gửi dưới field "file"
+        const authorization = localStorage.getItem('authorization') || '';
+        formData.append('file', blob, filename); 
     
         console.log('🚀 Uploading layout to server...', { filename });
     
-        fetch('https://inkme-3d-server-production.up.railway.app/api/products/upload-file', {
+        fetch('http://localhost:4000/api/products/upload-file', {
           method: 'POST',
+         headers: {
+        'Authorization': authorization,
+            },
           body: formData
         })
         .then(async res => {
@@ -13736,7 +13740,6 @@ Thêm Ảnh
     
           console.log('✅ Uploaded layout file:', inkmeFile);
     
-          // 👉 Gửi thêm vào giỏ hàng
           const cartItem = {
           productTitle: state.sceneName || 'InkMe Custom',
           images: [''],
@@ -13758,7 +13761,7 @@ Thêm Ảnh
           classifications: [
             {
               name: 'Size M',
-              image: 'https://dummyimage.com/100x100/ccc/000?text=S', // dummy hoặc ảnh thực
+              image: 'https://dummyimage.com/100x100/ccc/000?text=S', 
               price: 250000,
               quantity: 1,
               subTotal: 250000
@@ -13766,10 +13769,11 @@ Thêm Ảnh
           ]
         };
     
-          return fetch('https://inkme-3d-server-production.up.railway.app/api/cart/add', {
+          return fetch('http://localhost:4000/api/cart/add', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+               'Authorization': authorization,
             },
             body: JSON.stringify(cartItem)
           });
