@@ -13676,7 +13676,7 @@ Thêm Ảnh
       bgColor = getMaterialColor("env_sphere", "RGB", "CSS_HEX");
       puffPrint = getMaterialValue("Base", "Value.003");
       acidWash = getMaterialValue("Base", "Value.004");
-
+    
       Function(
         "app",
         "v3d",
@@ -13717,16 +13717,32 @@ Thêm Ảnh
         const filename = state.sceneName + '_layout.sav';
         
         const formData = new FormData();
-        const authorization = localStorage.getItem('authorization') || '';
+        
+        // SỬA: Thử nhiều cách lấy token
+        let authorization = '';
+        
+        // Thử lấy từ các source khác nhau
+        const token = localStorage.getItem('token') || 
+                     localStorage.getItem('authorization') || 
+                     sessionStorage.getItem('token') || 
+                     sessionStorage.getItem('authorization') ||
+                     window.authToken || '';
+        
+        if (token) {
+          // Nếu token chưa có Bearer prefix thì thêm vào
+          authorization = token.startsWith('Bearer ') ? token : \`Bearer \${token}\`;
+        }
+        
+        console.log('🔑 Authorization token:', authorization ? '✅ Có token' : '❌ Không có token');
+        
         formData.append('file', blob, filename); 
     
         console.log('🚀 Uploading layout to server...', { filename });
-    
         fetch('https://inkme-3d-server-production.up.railway.app/api/products/upload-file', {
           method: 'POST',
          headers: {
-        'Authorization': authorization,
-            },
+            'Authorization': authorization,
+          },
           body: formData
         })
         .then(async res => {
@@ -13773,7 +13789,7 @@ Thêm Ảnh
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-               'Authorization': authorization,
+              'Authorization': authorization,
             },
             body: JSON.stringify(cartItem)
           });
