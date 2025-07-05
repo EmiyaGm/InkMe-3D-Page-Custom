@@ -13769,7 +13769,7 @@ Thêm Ảnh
           ]
         };
     
-          return fetch(https://inkme-3d-server-production.up.railway.app/api/cart/add', {
+          return fetch(https://inkme-3d-server-production.up.railway.app/api/cart/add'), {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
