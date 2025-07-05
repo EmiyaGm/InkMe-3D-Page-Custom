@@ -13748,6 +13748,8 @@ Thêm Ảnh
           quantity: 1,
           subTotal: 190000,
           productId: localStorage.getItem("productId") || 'lo-custom',
+          productColor: '3D',
+          productSize: '3D',
           userId: localStorage.getItem("userId") || 'guest-user',
           inkmeFile: {
             url: result.url,
