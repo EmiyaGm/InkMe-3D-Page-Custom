@@ -454,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function () {
     colorInputs.forEach(input => {
         input.addEventListener('change', (e) => {
             e.preventDefault();
-            showColorWarning(e.target.value);
+            // showColorWarning(e.target.value);
         });
     });
 

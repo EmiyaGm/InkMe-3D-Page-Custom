@@ -11823,7 +11823,7 @@ function createPL(v3d = window.v3d) {
               textToolsNode.className = "cf_block cf_text";
               textToolsNode.innerHTML = `
 
-                  <button class="cf_button cf_text-add">Thêm chữ</button>
+                  <button class="cf_button cf_text-add">Add Text</button>
 
                     <input type="color" class="cf_text-color" data-stage="${stageId}"/>
                     <label class="cf_label cf_label-color"></label>
@@ -12191,7 +12191,7 @@ function createPL(v3d = window.v3d) {
               imageBlock.className = "cf_block cf_image";
               imageBlock.innerHTML = `
 <label class="cf_button cf_image-wrapper">
-Thêm Ảnh
+Upload Image
 </label>
 `;
               imageBlock = toolsFlexContainer.appendChild(imageBlock);
@@ -12473,7 +12473,7 @@ Thêm Ảnh
               undoRedo.className = "cf_block cf_state-controls";
 
               undoRedo.innerHTML = `
-                    <button class="cf_button cf_state-reset">Xóa thiết kế</button>`;
+                    <button class="cf_button cf_state-reset">Reset</button>`;
               toolsFlexContainer.append(undoRedo);
 
               //undo redo next
@@ -13100,17 +13100,12 @@ Thêm Ảnh
         setHTMLElemAttribute("className", "cf_button", "exportButton", false);
         setHTMLElemAttribute(
           "innerHTML",
-          "Lưu thiết kế",
+          "Save Layout",
           "exportButton",
           false
         );
         eventHTMLElem("click", "exportButton", false, function (event) {
           export_layout_to_file();
-        });
-        eventHTMLElem("click", "cart_button", false, function (event) {
-          event.preventDefault(); // Ngăn page refresh
-          event.stopPropagation(); // Ngăn event bubbling
-          upload_layout_to_server();
         });
         addHTMLElement(
           "button",
@@ -13120,7 +13115,7 @@ Thêm Ảnh
           false
         );
         setHTMLElemAttribute("className", "cf_button", "importButton", false);
-        setHTMLElemAttribute("innerHTML", "Mở thiết kế", "importButton", false);
+        setHTMLElemAttribute("innerHTML", "Load Layout", "importButton", false);
         eventHTMLElem("click", "importButton", false, function (event) {
           import_layout_from_file();
         });

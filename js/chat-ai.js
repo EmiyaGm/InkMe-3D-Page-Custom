@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const chatButton = document.getElementById("chat-button");
+    // const chatButton = document.getElementById("chat-button");
     const chatPopup = document.getElementById("chat-popup");
     const closeChat = document.getElementById("close-chat");
     const sendButton = document.getElementById("send-message");
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedImages = [];
 
     // Toggle chat popup
-    chatButton.addEventListener("click", () => {
-        chatPopup.style.display =
-            chatPopup.style.display === "flex" ? "none" : "flex";
-    });
+    // chatButton.addEventListener("click", () => {
+    //     chatPopup.style.display =
+    //         chatPopup.style.display === "flex" ? "none" : "flex";
+    // });
 
     // Close chat popup
     closeChat.addEventListener("click", () => {

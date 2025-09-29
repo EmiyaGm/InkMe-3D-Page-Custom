@@ -336,9 +336,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const openBtn = document.getElementById("open-remove-bg");
   const popup = document.getElementById("remove-bg-popup");
   const closeBtn = document.getElementById("close-remove-bg");
-  openBtn.addEventListener("click", function () {
-    popup.style.display = "flex";
-  });
+  // openBtn.addEventListener("click", function () {
+  //   popup.style.display = "flex";
+  // });
   closeBtn.addEventListener("click", function () {
     popup.style.display = "none";
   });
@@ -396,26 +396,6 @@ async function checkInappropriateContent(base64ImageData) {
 }
 
 // Cart button loading functionality
-document.addEventListener('DOMContentLoaded', function () {
-  const cartButton = document.getElementById('cart_button');
-  const cartLoadingOverlay = document.getElementById('cartLoadingOverlay');
-
-  if (cartButton && cartLoadingOverlay) {
-    cartButton.addEventListener('click', function () {
-      // Add loading state to button
-      cartButton.classList.add('loading');
-
-      // Show loading overlay
-      cartLoadingOverlay.classList.add('show');
-
-      // Remove loading state after 3 seconds
-      setTimeout(function () {
-        cartButton.classList.remove('loading');
-        cartLoadingOverlay.classList.remove('show');
-      }, 3000);
-    });
-  }
-});
 
 
 function prepareExternalInterface(app) {
